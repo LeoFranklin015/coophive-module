@@ -16,7 +16,7 @@
                 ],
                 "Image": "leofranklin1509/projectsmith@sha256:e891ad19a163577d63af6ad79e135b03cc6dba2dbe35832f7335280b80486bca",
                 "EnvironmentVariables": [
-                    "PROMPT={{.PROMPT}}"
+                      {{ if .PROMPT }}"{{ subst "PROMPT=%s" .PROMPT }}"{{else}}"PROMPT=Hello World"{{ end }}
                 ]
             },
       "Engine": "Docker",
